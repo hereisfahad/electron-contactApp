@@ -64,7 +64,10 @@ function clearTasks() {
 function handleSubmit(e) {
   e.preventDefault();
   console.log("submit");
-  const task = document.getElementById("task").value;
+  const name = document.getElementById("name").value;
+  const number = document.getElementById("number").value;
+  if (!number || !name) return;
+  let task = `${name} : ${number}`;
   if (task == "") return;
   addTaskToUI(task);
   addTaskToLS(task);
